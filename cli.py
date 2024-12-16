@@ -128,4 +128,49 @@ def view_students_by_tm():
     print(f"Students belonging to TM '{tm.name}' (ID {tm_id}):")
     for student in students:
         print(student)
-    
+
+def main_menu():
+    while True:
+        print("\nWelcome to the Application. What would you like to do?")
+        print("1. Create TM")
+        print("2. Update TM")
+        print("3. Delete TM")
+        print("4. Create Student")
+        print("5. Update Student")
+        print("6. Delete Student")
+        print("7. Assign Student to TM")
+        print("8. List TMs")
+        print("9. List Students")
+        print("10. View Students by TM")
+        print("11. EXit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            create_tm()
+        elif choice == "2":
+            update_tm()
+        elif choice == "3":
+            delete_tm()
+        elif choice == "4":
+            create_student()
+        elif choice == "5":
+            update_student()
+        elif choice == "6":
+            delete_student()
+        elif choice == "7":
+            assign_student()
+        elif choice == "8":
+            list_tms()
+        elif choice == "9":
+            list_students()
+        elif choice == "10":
+            view_students_by_tm()
+        elif choice == "11":
+            print("Exiting.......")
+            sys.exit()
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__== "__main__":
+    init_db()
+    main_menu()
